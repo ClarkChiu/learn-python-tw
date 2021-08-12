@@ -59,7 +59,7 @@ def test_list_type():
     - [Python 語法](src/getting_started/python_syntax.md)
     - [變數](src/getting_started/test_variables.py)
 2. **運算子**
-    - [數學運算子](src/operators/test_arithmetic.py) (`+`, `-`, `*`, `/`, `//`, `%`, `**`)
+    - [算數運算子](src/operators/test_arithmetic.py) (`+`, `-`, `*`, `/`, `//`, `%`, `**`)
     - [位元運算子](src/operators/test_bitwise.py) (`&`, `|`, `^`, `>>`, `<<`, `~`)
     - [指派運算子](src/operators/test_assigment.py) (`=`, `+=`, `-=`, `/=`, `//=` 等 ...)
     - [比較運算子](src/operators/test_comparison.py) (`==`, `!=`, `>`, `<`, `>=`, `<=`)
