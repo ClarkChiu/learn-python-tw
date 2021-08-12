@@ -1,222 +1,205 @@
-# Playground and Cheatsheet for Learning Python
+# 學習 Python 的練習場（Playground）和速查表（Cheatsheet）
 
 [![Build Status](https://travis-ci.org/trekhleb/learn-python.svg?branch=master)](https://travis-ci.org/trekhleb/learn-python)
 
-> This is a collection of Python scripts that are split by [topics](#table-of-contents) and contain 
-code examples with explanations, different use cases and links to further readings.
+> 此專案依據 [目錄](#目錄) 分類收集了 Python 腳本，包含了程式碼範例及解釋、不同的使用情境以及衍伸閱讀連結。
 
-_Read this in_ [_Português_](README.pt-BR.md).
+_閱讀英文原始版本_ [_English_](README.md)
 
-_Read this in_ [_Traditional Chinese_](README.zh-TW.md).
+_閱讀葡萄牙文翻譯版本_ [_Português_](README.pt-BR.md)
 
-It is a **playground** because you may change or add the code to see how it works 
-and [test it out](#testing-the-code) using assertions. It also allows you 
-to [lint the code](#linting-the-code) you've wrote and check if it fits to Python code style guide.
-Altogether it might make your learning process to be more interactive and it might help you to keep 
-code quality pretty high from very beginning.
+此專案名稱之所以叫做 **練習場（Playground）**，是因為您可以修改或是新增程式碼至範例中去觀察程式執行流程並使用斷言關鍵字（assert）來 [測試程式](#測試程式)。同時，此專案也使用了業界常用的工具來 [檢查程式碼](#檢查程式碼)，確保您所撰寫的程式碼符合官方建議的 Python 程式碼風格規範。
 
-It is a **cheatsheet** because you may get back to these code examples once you want to recap the 
-syntax of [standard Python statements and constructions](#table-of-contents). Also because the 
-code is full of assertions you'll be able to see expected functions/statements output right away
-without launching them.
+總而言之，此專案會使您的學習過程更具互動性，並幫助您從一開始學習的時候就使用高品質的程式碼。
 
-> _You might also be interested in 🤖 [Interactive Machine Learning Experiments](https://github.com/trekhleb/machine-learning-experiments)_
+此專案名稱之所以也包含了 **速查表（Cheatsheet）** 是因為您可以隨時透過此專案中的 [標準 Python 陳述式以及結構](#目錄) 回顧程式碼語法，也因為在此專案中的每個程式碼範例都使用了斷言來說明及教學，故您可以不用執行程式就看到函式/陳述式的預期輸出結果。
 
-## How to Use This Repository
+> 若對機器學習（Machine Learning）有興趣，可以參考專案原作者的另一個學習專案：🤖 [Interactive Machine Learning Experiments](https://github.com/trekhleb/machine-learning-experiments)
 
-Each Python script in this repository has the following structure:
+## 如何使用此專案儲存庫
+
+在此專案儲存庫中的每一個 Python 腳本皆為以下結構：
 
 ```python
-"""Lists  <--- Name of the topic here
+"""串列（Lists） <--- 此為主題名稱
 
-# @see: https://www.learnpython.org/en/Lists  <-- Link to further readings goes here
+# @詳見: https://www.learnpython.org/en/Lists <-- 此為延伸閱讀連結
 
-Here might go more detailed explanation of the current topic (i.e. general info about Lists).
+此處可能會有針對此主題更多的詳細說明（例如：關於串列的基本使用方法）
 """
 
-
 def test_list_type():
-    """Explanation of sub-topic goes here.
-    
-    Each file contains test functions that illustrate sub-topics (i.e. lists type, lists methods).
+    """此處為子主題解釋
+
+    每個檔案皆包含說明該子主題的測試函式（例如：串列型態、串列方法）
     """
-    
-    # Here is an example of how to build a list.  <-- Comments here explain the action
+
+    # 建立串列之範例 <-- 此行是解釋下一行程式碼動作之註解
     squares = [1, 4, 9, 16, 25]
-    
-    # Lists can be indexed and sliced. 
-    # Indexing returns the item.
-    assert squares[0] == 1  # <-- Assertions here illustrate the result.
-    # Slicing returns a new list.
-    assert squares[-3:] == [9, 16, 25]  # <-- Assertions here illustrate the result.
+
+    # 串列可以被索引（indexed）及切片（sliced）
+    # 索引會回傳該索引位置之內容值
+    assert squares[0] == 1 # <-- 利用斷言來呈現結果
+    # 切片會回傳一個新的串列
+    assert squares[-3:] == [9, 16, 25] # <-- 利用斷言來呈現結果
 ```
 
-So normally you might want to do the following:
+故您可以做以下動作：
 
-- [Find the topic](#table-of-contents) you want to learn or recap.
-- Read comments and/or documentation that is linked in each script's docstring (as in example above). 
-- Look at code examples and assertions to see usage examples and expected output.
-- Change code or add new assertions to see how things work.
-- [Run tests](#testing-the-code) and [lint the code](#linting-the-code) to see if it work and is 
-written correctly.
+- 找一個您想要學習或是回顧的 [主題](#目錄)。
+- 閱讀註解及/或包含於腳本文件字串（docstring）中的延伸閱讀資料（如上述之程式碼範例）。
+- 查看程式碼範例並利用斷言來展示使用範例及預期輸出。
+- 修改程式碼或新增新的斷言來了解程式運作流程。
+- [執行測試](#測試程式) 及 [檢查程式碼](#檢查程式碼) 來確認程式是否被正確撰寫及是否可以被正確執行。
 
-## Table of Contents
+## 目錄
 
-1. **Getting Started**
-    - [What is Python](src/getting_started/what_is_python.md)
-    - [Python Syntax](src/getting_started/python_syntax.md)
-    - [Variables](src/getting_started/test_variables.py)
-2. **Operators**
-    - [Arithmetic Operators](src/operators/test_arithmetic.py) (`+`, `-`, `*`, `/`, `//`, `%`, `**`)
-    - [Bitwise Operators](src/operators/test_bitwise.py) (`&`, `|`, `^`, `>>`, `<<`, `~`)
-    - [Assignment Operators](src/operators/test_assigment.py) (`=`, `+=`, `-=`, `/=`, `//=` etc.)
-    - [Comparison Operator](src/operators/test_comparison.py) (`==`, `!=`, `>`, `<`, `>=`, `<=`)
-    - [Logical Operators](src/operators/test_logical.py) (`and`, `or`, `not`)
-    - [Identity Operators](src/operators/test_identity.py) (`is`, `is not`)
-    - [Membership Operators](src/operators/test_membership.py) (`in`, `not in`)
-3. **Data Types**
-    - [Numbers](src/data_types/test_numbers.py) (including booleans)
-    - [Strings](src/data_types/test_strings.py) and their methods
-    - [Lists](src/data_types/test_lists.py) and their methods (including list comprehensions)
-    - [Tuples](src/data_types/test_tuples.py)
-    - [Sets](src/data_types/test_sets.py) and their methods
-    - [Dictionaries](src/data_types/test_dictionaries.py)
-    - [Type Casting](src/data_types/test_type_casting.py)
-4. **Control Flow**
-    - [The `if` statement](src/control_flow/test_if.py)
-    - [The `for` statement](src/control_flow/test_for.py) (and `range()` function)
-    - [The `while` statement](src/control_flow/test_while.py)
-    - [The `try` statements](src/control_flow/test_try.py)
-    - [The `break` statement](src/control_flow/test_break.py)
-    - [The `continue` statement](src/control_flow/test_continue.py)
-5. **Functions**
-    - [Function Definition](src/functions/test_function_definition.py) (`def` and `return` statements)
-    - [Scopes of Variables Inside Functions](src/functions/test_function_scopes.py) (`global` and `nonlocal` statements)
-    - [Default Argument Values](src/functions/test_function_default_arguments.py)
-    - [Keyword Arguments](src/functions/test_function_keyword_arguments.py)
-    - [Arbitrary Argument Lists](src/functions/test_function_arbitrary_arguments.py)
-    - [Unpacking Argument Lists](src/functions/test_function_unpacking_arguments.py) (`*` and `**` statements)
-    - [Lambda Expressions](src/functions/test_lambda_expressions.py) (`lambda` statement)
-    - [Documentation Strings](src/functions/test_function_documentation_string.py)
-    - [Function Annotations](src/functions/test_function_annotations.py)
-    - [Function Decorators](src/functions/test_function_decorators.py)
-6. **Classes**
-    - [Class Definition](src/classes/test_class_definition.py) (`class` statement)
-    - [Class Objects](src/classes/test_class_objects.py)
-    - [Instance Objects](src/classes/test_instance_objects.py)
-    - [Method Objects](src/classes/test_method_objects.py)
-    - [Class and Instance Variables](src/classes/test_class_and_instance_variables.py)
-    - [Inheritance](src/classes/test_inheritance.py)
-    - [Multiple Inheritance](src/classes/test_multiple_inheritance.py)
-7. **Modules**
-    - [Modules](src/modules/test_modules.py) (`import` statement)
-    - [Packages](src/modules/test_packages.py)
-8. **Errors and Exceptions**
-    - [Handling Exceptions](src/exceptions/test_handle_exceptions.py) (`try` statement)
-    - [Raising Exceptions](src/exceptions/test_raise_exceptions.py) (`raise` statement) 
-9. **Files**
-    - [Reading and Writing](src/files/test_file_reading.py) (`with` statement)
-    - [Methods of File Objects](src/files/test_file_methods.py)
-10. **Additions**
-    - [The `pass` statement](src/additions/test_pass.py)
-    - [Generators](src/additions/test_generators.py) (`yield` statement)
-11. **Brief Tour of the Standard Libraries**
-    - [Serialization](src/standard_libraries/test_json.py) (`json` library)
-    - [File Wildcards](src/standard_libraries/test_glob.py) (`glob` library)
-    - [String Pattern Matching](src/standard_libraries/test_re.py) (`re` library)
-    - [Mathematics](src/standard_libraries/test_math.py) (`math`, `random`, `statistics` libraries)
-    - [Dates and Times](src/standard_libraries/test_datetime.py) (`datetime` library)
-    - [Data Compression](src/standard_libraries/test_zlib.py) (`zlib` library)
+1. **入門**
+    - [Python 是什麼](src/getting_started/what_is_python.md)
+    - [Python 語法](src/getting_started/python_syntax.md)
+    - [變數](src/getting_started/test_variables.py)
+2. **運算子**
+    - [數學運算子](src/operators/test_arithmetic.py) (`+`, `-`, `*`, `/`, `//`, `%`, `**`)
+    - [位元運算子](src/operators/test_bitwise.py) (`&`, `|`, `^`, `>>`, `<<`, `~`)
+    - [指派運算子](src/operators/test_assigment.py) (`=`, `+=`, `-=`, `/=`, `//=` 等 ...)
+    - [比較運算子](src/operators/test_comparison.py) (`==`, `!=`, `>`, `<`, `>=`, `<=`)
+    - [邏輯運算子](src/operators/test_logical.py) (`and`, `or`, `not`)
+    - [恆等運算子](src/operators/test_identity.py) (`is`, `is not`)
+    - [成員存取運算子](src/operators/test_membership.py) (`in`, `not in`)
+3. **資料類型**
+    - [數字](src/data_types/test_numbers.py)（包含布林值）
+    - [字串](src/data_types/test_strings.py) 及相關方法
+    - [串列](src/data_types/test_lists.py) 及相關方法（包含列表構建）
+    - [元組](src/data_types/test_tuples.py)
+    - [集合](src/data_types/test_sets.py) 及相關方法
+    - [字典](src/data_types/test_dictionaries.py)
+    - [類型轉換](src/data_types/test_type_casting.py)
+4. **流程控制**
+    - [`if` 陳述式](src/control_flow/test_if.py)
+    - [`for` 陳述式](src/control_flow/test_for.py) (以及 `range()` 函式)
+    - [`while` 陳述式](src/control_flow/test_while.py)
+    - [`try` 陳述式](src/control_flow/test_try.py)
+    - [`break` 陳述式](src/control_flow/test_break.py)
+    - [`continue` 陳述式](src/control_flow/test_continue.py)
+5. **函式**
+    - [函式定義](src/functions/test_function_definition.py)（`def` 以及 `return` 陳述式）
+    - [函式內變數作用範圍](src/functions/test_function_scopes.py)（`global` 以及 `nonlocal` 陳述式）
+    - [預設引數](src/functions/test_function_default_arguments.py)
+    - [關鍵字引數](src/functions/test_function_keyword_arguments.py)
+    - [任意引數串列](src/functions/test_function_arbitrary_arguments.py)
+    - [拆解引數串列](src/functions/test_function_unpacking_arguments.py)（`*` 以及 `**` 陳述式）
+    - [Lambda 表達式](src/functions/test_lambda_expressions.py) (`lambda` 陳述式)
+    - [文件字串](src/functions/test_function_documentation_string.py)
+    - [函式註釋](src/functions/test_function_annotations.py)
+    - [函式裝飾器](src/functions/test_function_decorators.py)
+6. **類別**
+    - [類別定義](src/classes/test_class_definition.py) (`class` 陳述式)
+    - [類別物件](src/classes/test_class_objects.py)
+    - [物件實體](src/classes/test_instance_objects.py)
+    - [物件方法](src/classes/test_method_objects.py)
+    - [類別及實體變數](src/classes/test_class_and_instance_variables.py)
+    - [繼承](src/classes/test_inheritance.py)
+    - [多重繼承](src/classes/test_multiple_inheritance.py)
+7. **模組**
+    - [模組](src/modules/test_modules.py) (`import` 陳述式)
+    - [套件](src/modules/test_packages.py)
+8. **錯誤和例外**
+    - [例外處理](src/exceptions/test_handle_exceptions.py) (`try` 陳述式)
+    - [例外引發](src/exceptions/test_raise_exceptions.py) (`raise` 陳述式)
+9. **檔案**
+    - [讀取和寫入](src/files/test_file_reading.py) (`with` 陳述式)
+    - [檔案物件方法](src/files/test_file_methods.py)
+10. **附加內容**
+    - [`pass` 陳述式](src/additions/test_pass.py)
+    - [生成器](src/additions/test_generators.py) (`yield` 陳述式)
+11. **標準函式庫簡介**
+    - [串列化](src/standard_libraries/test_json.py) (`json` 函式庫)
+    - [檔案萬用字元](src/standard_libraries/test_glob.py) (`glob` 函式庫)
+    - [字串規則比對](src/standard_libraries/test_re.py) (`re` 函式庫)
+    - [數學運算](src/standard_libraries/test_math.py) (`math`, `random`, `statistics` 函式庫)
+    - [日期和時間](src/standard_libraries/test_datetime.py) (`datetime` 函式庫)
+    - [資料壓縮](src/standard_libraries/test_zlib.py) (`zlib` 函式庫)
 
-## Prerequisites
+## 使用此專案必備條件
 
-**Installing Python**
+**安裝 Python**
 
-Make sure that you have [Python3 installed](https://realpython.com/installing-python/) on your machine.
+確認您已安裝 [Python3](https://realpython.com/installing-python/) 在您的電腦上。
 
-You might want to use [venv](https://docs.python.org/3/library/venv.html) standard Python library
-to create virtual environments and have Python, pip and all dependent packages to be installed and 
-served from the local project directory to avoid messing with system wide packages and their 
-versions.
+您可能會想要使用標準 Python 函式庫所提供的 [虛擬環境](https://docs.python.org/3/library/venv.html) 功能在專案目錄中建立虛擬環境來佈署 Python 程式、pip 程式以及安裝所有需要的套件，藉此來避免作業系統中 Python 版本及相依性的混亂。
 
-Depending on your installation you might have access to Python3 interpreter either by
-running `python` or `python3`. The same goes for pip package manager - it may be accessible either
-by running `pip` or `pip3`.
+根據您的安裝方法，您可能可以通過以下方式執行 Python 3 直譯器：執行 `python` 或 `python3` 命令。pip 套件管理器執行方式也是如此：執行 `pip` 或 `pip3`。
 
-You may check your Python version by running:
+您可以使用以下命令來確認 Python 版本：
 
 ```bash
 python --version
 ```
 
-Note that in this repository whenever you see `python` it will be assumed that it is Python **3**.
+此專案儲存庫中的所有程式碼皆是基於 Python **3**。
 
-**Installing dependencies**
+**安裝相依性套件**
 
-Install all dependencies that are required for the project by running:
+透過以下命令安裝此專案需要的相依性套件：
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Testing the Code
+## 測試程式
 
-Tests are made using [pytest](https://docs.pytest.org/en/latest/) framework.
+此專案使用 [pytest](https://docs.pytest.org/en/latest/) 測試框架來執行程式碼測試。
 
-You may add new tests for yourself by adding files and functions with `test_` prefix
-(i.e. `test_topic.py` with `def test_sub_topic()` function inside).
+您可以新增以 `test_` 為開頭的檔案/函式來新增測試。（例如：`test_topic.py` 檔案內有 `def test_sub_topic()` 測試函式）
 
-To run all the tests please execute the following command from the project root folder:
+請從專案根目錄下使用以下命令來執行所有測試：
 
 ```bash
 pytest
 ```
 
-To run specific tests please execute:
+您也可以使用以下命令執行特定測試：
 
 ```bash
 pytest ./path/to/the/test_file.py
 ```
 
-## Linting the Code
+## 檢查程式碼
 
-Linting is done using [pylint](http://pylint.pycqa.org/) and [flake8](http://flake8.pycqa.org/en/latest/) libraries.
+此專案使用 [pylint](http://pylint.pycqa.org/) 以及 [flake8](http://flake8.pycqa.org/en/latest/) 函式庫來執行程式碼檢查。
 
 ### PyLint
 
-To check if the code is written with respect
-to [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide please run:
+檢查撰寫之程式碼是否符合 [PEP 8](https://www.python.org/dev/peps/pep-0008/) 風格規範，請執行以下命令：
 
 ```bash
 pylint ./src/
 ```
 
-In case if linter will detect error (i.e. `missing-docstring`) you may want to read more about 
-specific error by running:
+若此檢查工具偵測到錯誤（例如：`missing-docstring`），您可以使用以下命令查看特定錯誤之詳細說明：
 
 ```bash
 pylint --help-msg=missing-docstring
 ```
 
-[More about PyLint](http://pylint.pycqa.org/)
+[更多關於 PyLint](http://pylint.pycqa.org/)
 
 ### Flake8
 
-To check if the code is written with respect
-to [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide please run:
+檢查撰寫之程式碼是否符合 [PEP 8](https://www.python.org/dev/peps/pep-0008/) 風格規範，請執行以下命令：
 
 ```bash
-flake8 ./src
+flake8 . /src
 ```
 
-Or if you want to have more detailed output you may run:
+若您希望得到更多詳細的輸出，您可以加上以下參數再執行此工具：
 
 ```bash
-flake8 ./src --statistics --show-source --count
+flake8 . /src --statistics --show-source --count
 ```
 
-[More about Flake8](http://flake8.pycqa.org/en/latest/)
+[更多關於 Flake8](http://flake8.pycqa.org/en/latest/)
 
-## Supporting the project
+## 支持原作者專案
 
-You may support this project via ❤️️ [GitHub](https://github.com/sponsors/trekhleb) or ❤️️ [Patreon](https://www.patreon.com/trekhleb).
+您可以透過 ❤️️ [GitHub](https://github.com/sponsors/trekhleb) 或 ❤️️ [Patreon](https://www.patreon.com/trekhleb) 支持原作者專案

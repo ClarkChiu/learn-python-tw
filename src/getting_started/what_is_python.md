@@ -1,37 +1,50 @@
-# What is Python
+# Python 是什麼
 
-Python is a popular programming language. It was created in 1991 by Guido van Rossum.
+Python 是一個於西元 1991 年由 Guido van Rossum 設計並釋出的程式語言，也是目前資訊業界的主流程式語言之一。
 
-Python is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple but effective approach to object-oriented programming. Python’s elegant syntax and dynamic typing, together with its interpreted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms.
+Python 是一個簡單易學、強大的程式語言，其提供有效率的高階資料結構及簡單但有效的方法來實作物件導向程式設計，並提供了優雅的語法、動態類型及直譯式程式語言的特性，使其在多數領域和平臺上成為一個快速開發應用程式的首選。
 
-It is used for:
+Python 使用於以下領域：
 
-- web development (server-side),
-- software development,
-- mathematics,
-- system scripting.
+- 網站開發（伺服器端）
 
-## What can Python do?
+- 軟體開發
 
-- Python can be used on a server to create web applications.
-- Python can be used alongside software to create workflows.
-- Python can connect to database systems. It can also read and modify files.
-- Python can be used to handle big data and perform complex mathematics.
-- Python can be used for rapid prototyping, or for production-ready software development.
+- 數學
 
-## Why Python?
+- 系統腳本
 
-- Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).
-- Python has a simple syntax similar to the English language.
-- Python has syntax that allows developers to write programs with fewer lines than some other programming languages.
-- Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick.
-- Python can be treated in a procedural way, an object-orientated way or a functional way.
+## Python 能做什麼？
 
-## Good to know
+- Python 可以被用於伺服器端創建網站應用程式
 
-- The most recent major version of Python is Python 3, which we shall be using in this tutorial. However, Python 2, although not being updated with anything other than security updates, is still quite popular.
-- In this tutorial Python will be written in a text editor. It is possible to write Python in an Integrated Development Environment, such as Thonny, Pycharm, Netbeans or Eclipse which are particularly useful when managing larger collections of Python files.
+- Python 可以與其餘軟體一起搭配創建工作流程
 
-## References
+- Python 可以連接到資料庫系統，也可以讀取和修改檔案
+
+- Python 可以被用於處理大數據和執行複雜的數學運算
+
+- Python 可以被用於快速產品原型設計，或用於高品質的軟體開發
+
+## 為什麼使用 Python？
+
+- Python 可以執行於不同平臺（Windows、Mac、Linux、Raspberry Pi 等等）
+
+- Python 有著類似英文的簡單語法
+
+- Python 擁有的簡單語法，可以讓程式開發者使用較少於其他程式語言的程式碼行數開發出相同功能之程式
+
+- Python 是直譯式程式語言，程式碼可以在撰寫完成後馬上執行和除錯，這代表產品原型設計將可以相當迅速的完成
+
+- Python 可以用於程序式程式設計、物件導向程式設計、函數式程式設計
+
+## 相關知識
+
+- 目前主流的 Python 版本為 Python 3，本教學專案也是使用此 Python 版本進行教學。然而，雖然 Python 2 除了安全性更新外已經不再更新了，其還是相當流行於資訊業界。
+
+- 此教學專案使用單純的文字編輯器進行程式撰寫，但您當然可以使用整合式開發環境，例如：Thonny、 Pycharm、Netbeans 或 Eclipse 來進行開發，這些整合式開發環境特別適合用來管理大型的 Python 專案。
+
+## 參考資料
 
 - [w3schools.com](https://www.w3schools.com/python/python_intro.asp)
+
