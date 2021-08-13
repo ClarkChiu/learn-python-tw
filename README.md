@@ -1,6 +1,6 @@
 # 學習 Python 的練習場（Playground）和速查表（Cheatsheet）
 
-[![Build Status](https://travis-ci.org/trekhleb/learn-python.svg?branch=master)](https://travis-ci.org/trekhleb/learn-python)
+[![Build Status](https://github.com/ClarkChiu/learn-python-tw/actions/workflows/tester-and-linter.yml/badge.svg)](https://github.com/ClarkChiu/learn-python-tw)
 
 > 此專案依據 [目錄](#目錄) 分類收集了 Python 腳本，包含了程式碼範例及解釋、不同的使用情境以及衍伸閱讀連結。
 
