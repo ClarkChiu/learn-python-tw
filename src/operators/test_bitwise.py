@@ -20,7 +20,7 @@ def test_bitwise_operators():
     # 或閘（OR Gate）
     # 當兩個輸入任一為 1 時，輸出為 1
     #
-    # 範例：:
+    # 範例：
     # 5 = 0b0101
     # 3 = 0b0011
     assert 5 | 3 == 7  # 0b0111
