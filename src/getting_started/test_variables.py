@@ -26,7 +26,7 @@ def test_variables():
 
     assert integer_variable == 5
     assert string_variable == 'John'
-    variable_with_changed_type = 4  # 此變數目前是整數型態
-    variable_with_changed_type = 'Sally'  # 此變數目前是字串型態
+    variable_with_changed_type = 4  # 此變數目前是整數類型
+    variable_with_changed_type = 'Sally'  # 此變數目前是字串類型
 
     assert variable_with_changed_type == 'Sally'
