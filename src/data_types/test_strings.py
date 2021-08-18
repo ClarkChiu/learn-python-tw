@@ -66,8 +66,8 @@ def test_string_type():
     assert word[4:] == 'on'   # 從位置 4（包含）到字串中最後一個字元（預設）的子字串
     assert word[-2:] == 'on'  # 從倒數第 2 個字元（包含）到字串中最後一個字元（預設）的子字串
 
-    # 一個記住切片運作方式的方法為想著
-    # 索引值是指著字元和字元的中間，最左邊邊界是位置 0
+    # 一個記住切片運作方式的方法為
+    # 想像索引值是指向字元和字元的中間，最左邊邊界是位置 0
     # 最右邊邊界是此字串的長度，如以下範例：
     #
     #  +---+---+---+---+---+---+
@@ -100,7 +100,7 @@ def test_string_type():
     characters = 'supercalifragilisticexpialidocious'
     assert len(characters) == 34
 
-    # 字串文字可以跨越多行進行賦值其中一種方式是利用三個引號： """...""" 或 '''...'''
+    # 字串可以利用三個引號來跨多行進行賦值： """...""" 或 '''...'''
     # 當使用此種方式賦值時，連空白行也會被包含至字串中
     # 但可以在行尾加上 \ 來避免這個問題，如以下範例：
     multi_line_string = '''\
@@ -150,7 +150,7 @@ def test_string_methods():
     string_with_whitespaces = " Hello, World! "
     assert string_with_whitespaces.strip() == "Hello, World!"
 
-    # len() 方法將會回傳字串長度
+    # len() 方法會將字串長度回傳
     assert len(hello_world_string) == 13
 
     # lower() 方法會將字串內所有英文字元轉換成小寫
@@ -205,29 +205,32 @@ def test_string_formatting():
     """
 
     # 我們可以使用 f-string 的功能來進行字串格式化
-    # 首先，在使用字串時，我們先在引號左邊加上 f 或是 F在字串中您就可以使用 { } 符號來撰寫 Python 表達式
-    # 或取得變數/文字內容
+    # 首先，在使用字串時，我們先在引號左邊加上 f 或是 F，
+    # 在字串中您就可以使用 { } 符號來撰寫 Python 表達式或是取得變數/文字內容
     year = 2018
     event = 'conference'
 
     assert f'Results of the {year} {event}' == 'Results of the 2018 conference'
 
     # str.format() 字串格式化方法則需要多一點手工，我們還是一樣使用 { } 符號來標記變數取代的位置
-    # 並提供更詳細的格式化指示，但要取代的變數需要透過 .format() 函式傳入
+    # 並提供更詳細的格式化指示，但用來取代的資料需要透過 .format() 函式傳入
     yes_votes = 42_572_654  # 等同於 42572654
     no_votes = 43_132_495   # 等同於 43132495
     percentage = yes_votes / (yes_votes + no_votes)
 
     assert '{:-9} YES votes {:2.2%}'.format(yes_votes, percentage) == ' 42572654 YES votes 49.67%'
 
-    # 當您僅是需要快速的輸出來進行除錯時
-    # 您可以使用 repr() 或 str() 函式來將任何物件轉換為字串
-    # str() 函式的用途為將物件轉換為人類可以閱讀的字串
-    # 而 repr() 函式則是將物件轉換成直譯器可以讀取的字串
-    # 若該物件沒有 __repr__() 方法則會導致語法錯誤
-    # 若該物件沒有實作 __str__() 方法，則此函式會回傳 repr() 函式的執行結果
-    # 許多資料結構，例如數字、串列和字典，在個別的物件中都實作了相同的 __str__() 和 __repr__() 表示函式
+    # 當您僅是需要快速輸出來進行除錯時，
+    # 您可以使用 repr() 或 str() 函式來將任何物件轉換為字串，
+    # str() 函式的用途為將物件轉換為人類可以閱讀的字串，
+    # 而 repr() 函式則是將物件轉換成直譯器可以讀取的字串，
+    # 若該物件沒有實作 __str__() 方法，則此函式會回傳 repr() 函式的執行結果，
+    # 若該物件沒有 __repr__() 方法則會導致語法錯誤，
+
+    # 許多資料結構，例如數字、串列和字典，
+    # 在個別的物件中都實作了相同的 __str__() 和 __repr__() 表示函式，
     # 但字串則是有兩個不同的表示函式
+
     greeting = 'Hello, world.'
     first_num = 10 * 3.25
     second_num = 200 * 200
@@ -239,17 +242,16 @@ def test_string_formatting():
     # repr() 函式可以傳入任何 Python 物件：
     assert repr((first_num, second_num, ('spam', 'eggs'))) == "(32.5, 40000, ('spam', 'eggs'))"
 
-    # 字串格式化
-
-    # f-string 功能可以讓您在字串中
-    # 直接使用 Python 的表達式，語法為 f'{expression}'
+    # 字串格式化：
+    # f-string 功能可以讓您在字串中直接使用 Python 的表達式，
+    # 語法為 f'{expression}'，
     # 您可以利用以下可選的描述符號來更進一步格式化輸出
 
     # 以下範例將 pi 四捨五入至小數點後三位
     pi_value = 3.14159
     assert f'The value of pi is {pi_value:.3f}.' == 'The value of pi is 3.142.'
 
-    # 在 : 後設定整數可以設定輸出的字元寬度，這個功能在對齊時很有用
+    # 在 : 後寫上整數可以設定輸出的字元寬度，這個功能在對齊時很有用
     table_data = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 7678}
     table_string = ''
     for name, phone in table_data.items():
@@ -260,11 +262,10 @@ def test_string_formatting():
                             'Dcab   ==>   7678')
 
     # format() 方法
-
     # str.format() 的基本使用方式為
     assert 'We are {} who say "{}!"'.format('knights', 'Ni') == 'We are knights who say "Ni!"'
 
-    # 在字串中的大括號（稱為格式化欄位）會被傳入 str.format() 方法的物件內容所取代
+    # 在字串中的大括號（稱為格式化欄位）將會被傳入 str.format() 方法的物件內容所取代
     # 您也可以在大括號中填入數字來標示傳入 str.format() 方法的物件位置，藉以來索引用來取代的內容
     assert '{0} and {1}'.format('spam', 'eggs') == 'spam and eggs'
     assert '{1} and {0}'.format('spam', 'eggs') == 'eggs and spam'
@@ -277,7 +278,7 @@ def test_string_formatting():
 
     assert formatted_string == 'This spam is absolutely horrible.'
 
-    # 位置索引和關鍵字索引可以被任意組合
+    # 位置索引和關鍵字索引可以被任意搭配使用
     formatted_string = 'The story of {0}, {1}, and {other}.'. format(
         'Bill',
         'Manfred',
@@ -286,7 +287,7 @@ def test_string_formatting():
 
     assert formatted_string == 'The story of Bill, Manfred, and Georg.'
 
-    # 若您有一個很長的欲格式化的字串，但您不想分割它的話
+    # 若您要格式化的字串很長，且您不想分割它的話
     # 您可以使用鍵值索引的方式來達成這個需求
     # 您可以傳入一個字典物件並使用中括號 '[]' 來使用鍵值索引
     table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 8637678}
